@@ -103,7 +103,7 @@ void merge_sort(int *array, size_t size)
 {
 	int *new_array;
 
-	if (!array || size < 0)
+	if (!array || size < 2)
 		return;
 	new_array = malloc(sizeof(int) * size);
 	if (new_array == NULL)
