@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include "sort.h"
 
-
-void quick(int *array, size_t start, size_t end, size_t size);
-int partition(int *array, size_t start, size_t end, size_t size);
+void quick(int *array, int start, int end, size_t size);
+int partition(int *array, int start, int end, size_t size);
 
 /**
  * partition - partition the array.
@@ -14,9 +13,9 @@ int partition(int *array, size_t start, size_t end, size_t size);
  * @size: size
  * Return: int.
  */
-int partition(int *array, size_t start, size_t end, size_t size)
+int partition(int *array, int start, int end, size_t size)
 {
-	size_t pivot, i, num, tmp;
+	int pivot, i, num, tmp;
 
 	pivot = array[end];
 	num = start - 1;
@@ -50,9 +49,9 @@ int partition(int *array, size_t start, size_t end, size_t size)
  * @end: end.
  * @size: size.
  */
-void quick(int *array, size_t start, size_t end, size_t size)
+void quick(int *array, int start, int end, size_t size)
 {
-	size_t pInd;
+	int pInd;
 
 	if (start < end)
 	{
@@ -68,7 +67,7 @@ void quick(int *array, size_t start, size_t end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (!array)
+	if (!array || size < 2 || !size)
 		return;
 	quick(array, 0, size - 1, size);
 }
