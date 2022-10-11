@@ -109,4 +109,5 @@ void merge_sort(int *array, size_t size)
 	if (new_array == NULL)
 		return;
 	merge_divide(array, size, 0, size, new_array);
+	free(new_array);
 }
