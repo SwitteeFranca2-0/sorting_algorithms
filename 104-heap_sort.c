@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "sort.h"
 
+void heapify(int *array, size_t s, size_t root, size_t size);
 /**
  * heap_sort - sorts an array following the Heap sort algorithm
  * @array: array of ints to sort
